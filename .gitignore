@@ -1,0 +1,10 @@
+# Ignore files with 'gen-' prefix
+gen-*
+
+# Ignore built files
+*.o
+*.a
+
+*.png
+*.svg
+*.jar

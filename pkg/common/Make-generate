@@ -1,0 +1,14 @@
+#
+# for now... run this manually via:
+# make -f Make-generate
+#
+
+colortbl.h: brewer_lib svgcolor_lib color_names buildtool/make_colortbl.py
+	python3 buildtool/make_colortbl.py brewer_lib svgcolor_lib color_names colortbl.h
+
+brewer_lib: brewer_colors buildtool/make_brewer_lib.py
+	python3 buildtool/make_brewer_lib.py "brewer_colors" "$@"
+
+svgcolor_lib: svgcolor_names buildtool/make_svgcolor_lib.py
+	python3 buildtool/make_svgcolor_lib.py "svgcolor_names" "$@"
+
