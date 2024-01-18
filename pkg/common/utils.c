@@ -418,20 +418,6 @@ pointf dotneato_closest(splines * spl, pointf pt)
     return pt2;
 }
 
-static int Tflag;
-void gvToggle(int s)
-{
-    (void)s;
-    Tflag = !Tflag;
-#if !defined(_WIN32)
-    signal(SIGUSR1, gvToggle);
-#endif
-}
-
-int test_toggle(void)
-{
-    return Tflag;
-}
 
 struct fontinfo {
     double fontsize;

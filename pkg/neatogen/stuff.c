@@ -438,14 +438,13 @@ void solve_model(graph_t * G, int nG)
 	move_node(G, nG, np);
     }
     if (Verbose) {
-	fprintf(stderr, "\nfinal e = %f", total_e(G, nG));
-	fprintf(stderr, " %d%s iterations %.2f sec\n",
-		GD_move(G), GD_move(G) == MaxIter ? "!" : "",
-		elapsed_sec());
+        fprintf(stderr, "\nfinal e = %f", total_e(G, nG));
+        fprintf(stderr, " %d%s iterations %.2f sec\n",
+            GD_move(G), GD_move(G) == MaxIter ? "!" : "",
+            elapsed_sec());
     }
     if (GD_move(G) == MaxIter)
-	agerr(AGWARN, "Max. iterations (%d) reached on graph %s\n",
-	      MaxIter, agnameof(G));
+	    agerr(AGWARN, "Max. iterations (%d) reached on graph %s\n", MaxIter, agnameof(G));
 }
 
 static void update_arrays(graph_t * G, int nG, int i)
@@ -563,14 +562,7 @@ void move_node(graph_t * G, int nG, node_t * n)
     }
     GD_move(G)++;
     update_arrays(G, nG, m);
-    if (test_toggle()) {
-	double sum = 0;
-	for (i = 0; i < Ndim; i++) {
-	    sum += fabs(b[i]);
-	}			/* Why not squared? */
-	sum = sqrt(sum);
-	fprintf(stderr, "%s %.3f\n", agnameof(n), sum);
-    }
+
 }
 
 static node_t **Heap;

@@ -50,10 +50,6 @@ extern "C" {
 	
 #define LAYOUT_DONE(g) (agbindrec(g, "Agraphinfo_t", 0, true) && GD_drawing(g))
 
-/* misc */
-/* FIXME - this needs eliminating or renaming */
-GVC_API void gvToggle(int);
-
 /* set up a graphviz context */
 GVC_API GVC_t *gvNEWcontext(const lt_symlist_t *builtins, int demand_loading);
 

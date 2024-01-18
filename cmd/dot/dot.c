@@ -50,7 +50,6 @@ int main(int argc, char **argv)
     GvExitOnUsage = 1;
     gvParseArgs(Gvc, argc, argv);
 
-    signal(SIGUSR1, gvToggle);
     signal(SIGFPE, fperr);
 
     if ((G = gvPluginsGraph(Gvc))) {
